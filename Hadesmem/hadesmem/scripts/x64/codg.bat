@@ -1,0 +1,1 @@
+inject.exe --run "E:\Games\SteamLibrary\SteamApps\common\Call of Duty Ghosts\iw6mp64_ship.exe" --inject --steam-app-id 209160 --export Load --add-path --path-resolution --module cerberus.dll

@@ -1,0 +1,1 @@
+inject.exe --run "E:\Games\SteamLibrary\steamapps\common\Dark Souls II\Game\DarkSoulsII.exe" --inject --steam-app-id 236430 --export Load --add-path --path-resolution --module cerberus.dll

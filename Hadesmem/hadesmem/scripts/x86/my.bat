@@ -1,0 +1,1 @@
+inject.exe --run "C:\Users\Admin\AppData\Local\MyComGames\MyComGames.exe" --inject --export Load --add-path --path-resolution --module cerberus.dll
