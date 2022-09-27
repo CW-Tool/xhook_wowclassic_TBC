@@ -720,20 +720,20 @@ typedef struct
 	int EndTime;
 }AuraRec;
 
-enum IntersectFlags : uint32_t {
-	None,
-	DoodadCollision = 0x00000001,
-	DoodadRender = 0x00000002,
-	WmoCollision = 0x00000010,
-	WmoRender = 0x00000020,
-	WmoNoCamCollision = 0x00000040,
-	Terrain = 0x00000100,
-	IgnoreWmoDoodad = 0x00002000,
-	LiquidWaterWalkable = 0x00010000,
-	LiquidAll = 0x00020000,
-	Cull = 0x00080000,
-	EntityCollision = 0x00100000,
-	EntityRender = 0x00200000,
-	Collision = DoodadCollision | WmoCollision | Terrain | EntityCollision,
-	LineOfSight = WmoCollision | EntityCollision
-};
+//enum IntersectFlags : uint32_t {
+//	None,
+//	DoodadCollision = 0x00000001,
+//	DoodadRender = 0x00000002,
+//	WmoCollision = 0x00000010,
+//	WmoRender = 0x00000020,
+//	WmoNoCamCollision = 0x00000040,
+//	Terrain = 0x00000100,
+//	IgnoreWmoDoodad = 0x00002000,
+//	LiquidWaterWalkable = 0x00010000,
+//	LiquidAll = 0x00020000,
+//	Cull = 0x00080000,
+//	EntityCollision = 0x00100000,
+//	EntityRender = 0x00200000,
+//	Collision = DoodadCollision | WmoCollision | Terrain | EntityCollision,
+//	LineOfSight = WmoCollision | EntityCollision
+//};
