@@ -22,3 +22,9 @@ https://www.youtube.com/watch?v=NHlHjc5f8SE&t=1s&ab_channel=TeamGalixte
 https://www.youtube.com/watch?v=0yB7eiAlFn4&ab_channel=TeamGalixte
 
 https://www.youtube.com/watch?v=RRFxpNt2zvc&ab_channel=TeamGalixte
+
+Detour https://github.com/Jnnshschl/AmeisenNavigation
+
+Hadesmem https://github.com/namreeb/hadesmem.git
+
+Microsoft DirectX SDK (June 2010) https://www.microsoft.com/en-us/download/confirmation.aspx?id=6812 
