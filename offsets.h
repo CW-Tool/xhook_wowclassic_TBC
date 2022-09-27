@@ -99,7 +99,7 @@ namespace Offsets
 	static inline uintptr_t Spell_C_HaveSpellPower = Base + 0x3297B0; // 4C 89 4C 24 ? 4C 89 44 24 ? 89 54 24 10 53 55 56 57
 	static inline uintptr_t isSpellKnown = Base + 0x6347A0; // 48 89 5C 24 ? 57 48 83 EC 20 0F B6 FA 8B D9 E8 ? ? ? ? 85 C0 79 43 40 84 FF 74 18 8B CB E8 ? ? ? ? 48 85 C0 0F 95 C0 48 8B 5C 24 ? 48 83 C4 20 5F C3 81 FB ? ? ? ?
 	static inline uintptr_t findSlotBySpellId = Base + 0x62E230; //44 8B C1 85 C9 0F 84 ? ? ? ? 84 D2 74 51 44 8B 0D ? ? ? ? 33 D2 45 85 C9 74 74 4C 8B 15 ? ? ? ? 49 8B 0C D2 
-	//static inline uintptr_t CancelChannelOffset = Base + 0x1106010;  //48 89 5C 24 ?? 48 89 74 24 ?? 57 48 83 EC 50 8B F2 8B D9 E8 ?? ?? ?? ?? BA ?? ?? ?? ?? 41 B8 ?? ?? (...) FF
+	static inline uintptr_t CancelChannelOffset = Base + 0x1106010;  //48 89 5C 24 ?? 48 89 74 24 ?? 57 48 83 EC 50 8B F2 8B D9 E8 ?? ?? ?? ?? BA ?? ?? ?? ?? 41 B8 ?? ?? (...) FF
 	static inline uintptr_t UnitReaction = Base + 0x1311A90; //48 89 5C 24 ? 57 48 83 EC 20 48 8B DA 48 8B F9 E8 ? ? ? ? 83 F8 04 7D 37 48 8B D7 48 8B CB E8 ? ? ? ? 83 F8 04 7D 27 8B 87 ? ? ? ? C1 E8 14 A8 01 74 0D 8B 83 ? ? ? ? C1 E8 03 A8 01 75 0D 32 C0 48 8B 5C 24 ? 48 83 C4 20 5F C3 48 8B 5C 24 ? B0 01 48 83 C4 20 5F C3
 	static inline uintptr_t Cooldown = Base + 0x2C866A0;
 
