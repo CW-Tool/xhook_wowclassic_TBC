@@ -6,6 +6,8 @@ Prebuild .DLL supported patch: 2.5.4.44883
 How to build the .DLL:
 Open C++, Build DebugX64 version, Open the game go to settings and set your directx version on dx11. Download a injector and inject.
 
+start WORLD OF WARCRAFT -> System -> Advanced -> Graphics API -> DIRECTX11 OR DX11_LEGACY
+
 Does not contain any anti Warden code use at your own risk!
 
 
