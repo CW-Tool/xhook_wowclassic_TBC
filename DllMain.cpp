@@ -188,8 +188,10 @@ LRESULT CALLBACK hWndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
 
 	if (uMsg == WM_KEYUP)
 	{
+		std::cout << "\t[+] KEY " << wParam << " Up." << std::endl;
 		if (wParam == VK_INSERT)
 		{
+			std::cout << "\t[+] KEY Insert Pressed." << std::endl;
 			Settings::UI::Windows::Menu::g_ShowMenu = !Settings::UI::Windows::Menu::g_ShowMenu;
 
 			if (Settings::UI::Windows::Menu::g_ShowMenu)
@@ -207,6 +209,17 @@ LRESULT CALLBACK hWndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
 	}
 
 	return CallWindowProc(OriginalWndProcHandler, hWnd, uMsg, wParam, lParam);
+}
+typedef unsigned __int64 QWORD;
+struct XYZ { float X1; float Y1; float Z1; };
+struct XYZXYZ { float X1; float Y1; float Z1; float X2; float Y2; float Z2; };
+struct Intersection { float X; float Y; float Z; float R; };
+
+BYTE __declspec(dllexport) __fastcall Intersect(QWORD worldframe, XYZ* endpos, XYZ* startpos, XYZ* hitpos, float* distance, unsigned int flags, QWORD ptr)
+{
+	typedef BYTE __fastcall func(QWORD worldframe, XYZ* endpos, XYZ* startpos, XYZ* hitpos, float* distance, unsigned int flags);
+	func* f = (func*)ptr;
+	return f(worldframe, endpos, startpos, hitpos, distance, flags);
 }
 
 void __stdcall hookD3D11DrawIndexed(ID3D11DeviceContext* pContext, UINT IndexCount, UINT StartIndexLocation, INT BaseVertexLocation) {
