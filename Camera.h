@@ -45,5 +45,7 @@ static_assert(sizeof(CameraMgrPtr) == 0x8A8);
 			static CameraMgr* GCamera;
 			static void Init();
 			static Vector2 WorldToScreenv2(C3Vector unitPosition);
+            static bool TraceLine(WObject* Object, C3Vector Target, IntersectFlags intersectFlags);
+            static bool TraceLineTest();
 		};
 	}

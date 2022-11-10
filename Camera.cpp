@@ -58,4 +58,36 @@ namespace WoW
 
 		return screenPos;
 	}
+
+	bool camera::TraceLine(WObject* Object, C3Vector Target, IntersectFlags intersectFlags) {
+		float distance = 1.0f;
+		C3Vector start = Object->GetUnitPosition();
+		C3Vector end = Target;
+		C3Vector hit = C3Vector(0.0, 0.0, 0.0);
+
+		bool collision = GameMethods::Invoke<bool>(Offsets::WorldFrameIntersect, GameMethods::Invoke<int64_t>(Offsets::GetWorld), &end, &start, &hit, &distance, intersectFlags);
+
+		if (hit.x != 0 && hit.y != 0) {
+		}
+		else {}
+		return !collision;
+	}
+
+	bool camera::TraceLineTest() {
+		float distance = 1.0f;
+		C3Vector start = C3Vector(-9692.75f, 413.926f, -58.8617f);
+		C3Vector end = C3Vector(-8944.98f, -147.322f, 90.3934f);
+		C3Vector hit = C3Vector(0.0, 0.0, 0.0);
+
+		bool collision = GameMethods::Invoke<bool>(Offsets::WorldFrameIntersect, GameMethods::Invoke<int64_t>(Offsets::GetWorld), &end, &start, &hit, &distance, IntersectFlags::LineOfSight);
+
+		if (hit.x != 0 && hit.y != 0) {
+			printf("camera::TraceLineTest hit x: %f y: %f z: %f \n", hit.x, hit.y, hit.z);
+		}
+		else {
+			
+		}
+		printf("camera::TraceLineTest collision %d \n", collision);
+		return !collision;
+	}
 }

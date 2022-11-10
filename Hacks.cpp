@@ -178,11 +178,23 @@ namespace WoW
 		//{
 		//	printf("Not Ingame\n");
 		//	
-		
+		// 
+		// print method both ok
+		//std::cout << "std::cout Hacks::GExecute_IGFunctions running " << std::endl;
+		//printf("printf Hacks::GExecute_IGFunctions running\n");
 	
 
 		if (!GameMethods::ObjMgrIsValid(0))
+		{
+			std::cout << "std::cout ObjMgrIsValid Not Valid " << std::endl;
+			printf("printf ObjMgrIsValid Not Valid\n");
 			return;
+		}
+			
+		int64_t iworld = GameMethods::Invoke<int64_t>(Offsets::GetWorld);
+		printf("printf Offsets::GetWorld %llx \n", iworld);
+
+		WoW::camera::TraceLineTest();
 
 		//LuaScript::ReInitObjMgr(); // Loop ObjMgr
 	
