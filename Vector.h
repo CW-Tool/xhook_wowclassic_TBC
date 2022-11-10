@@ -130,23 +130,23 @@ public:
 
 	bool operator!() { return !x && !y && !z; }
 
-	Vector Vector::Normalized() const
-	{
-		Vector res = *this;
-		float l = res.Length();
-		if (l != 0.0f) {
-			res /= l;
-		}
-		else {
-			res.x = res.y = res.z = 0.0f;
-		}
-		return res;
-	}
+	//Vector Vector::Normalized() const
+	//{
+	//	Vector res = *this;
+	//	float l = res.Length();
+	//	if (l != 0.0f) {
+	//		res /= l;
+	//	}
+	//	else {
+	//		res.x = res.y = res.z = 0.0f;
+	//	}
+	//	return res;
+	//}
 
-	Vector Direction()
-	{
-		return Vector(cos(y * M_PI / 180.0f) * cos(x * M_PI / 180.0f), sin(y * M_PI / 180.0f) * cos(x * M_PI / 180.0f), sin(-x * M_PI / 180.0f)).Normalized();
-	}
+	//Vector Direction()
+	//{
+	//	return Vector(cos(y * M_PI / 180.0f) * cos(x * M_PI / 180.0f), sin(y * M_PI / 180.0f) * cos(x * M_PI / 180.0f), sin(-x * M_PI / 180.0f)).Normalized();
+	//}
 	void VectorCrossProduct(const Vector& a, const Vector& b, Vector& result)
 	{
 		result.x = a.y * b.z - a.z * b.y;

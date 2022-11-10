@@ -153,7 +153,7 @@ unsigned int LuaScript::EnumVisibleObjCb(int64_t objectPtr, int64_t filter)
 
 void LuaScript::RegisterHandler(std::string commandName, GameMethods::LuaCallback callback)
 {
-	GameMethods::Register(commandName.c_str(), LuaScript::WriteCallback(callback));
+	//GameMethods::Register(commandName.c_str(), LuaScript::WriteCallback(callback));
 }
 
 void LuaScript::SetHardwareEvent()

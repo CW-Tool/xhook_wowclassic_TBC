@@ -70,8 +70,8 @@ namespace WoW
 
 			Vector3 Corpse;
 			Corpse.x = *reinterpret_cast<float*>(Offsets::Corpsex);
-			Corpse.y = *reinterpret_cast<float*>(Offsets::Corpsey);
-			Corpse.z = *reinterpret_cast<float*>(Offsets::Corpsez);
+			Corpse.y = *reinterpret_cast<float*>(Offsets::Corpsex + 4);
+			Corpse.z = *reinterpret_cast<float*>(Offsets::Corpsex + 8);
 			if (Corpse.x != 0 && Corpse.y != 0 && Corpse.z != 0)
 			{
 				/*if (Funcs::IsGhost(Corpse))
@@ -233,8 +233,8 @@ namespace WoW
 			return 1;
 
 		float corpseXPos = *reinterpret_cast<float*>(Offsets::Corpsex);
-		float corpseYPos = *reinterpret_cast<float*>(Offsets::Corpsey);
-		float corpseZPos = *reinterpret_cast<float*>(Offsets::Corpsez);
+		float corpseYPos = *reinterpret_cast<float*>(Offsets::Corpsex + 4);
+		float corpseZPos = *reinterpret_cast<float*>(Offsets::Corpsex + 8);
 
 		int corpseMapID = *reinterpret_cast<int*>(Offsets::CorpseMapID);
 

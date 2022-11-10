@@ -18,25 +18,27 @@ public:
 	}
 
 	// framescript	
-	static inline int64_t GameMethods::Execute(const char* command)
-	{
-		return reinterpret_cast<int64_t(__fastcall*)(int64_t, int64_t, int64_t)>(Offsets::Base + Offsets::FrameScriptExecute)(int64_t(command), int64_t("compat"), 0);
-	}
+	//static inline int64_t GameMethods::Execute(const char* command)
+	//{
+	//	return 0;
+	//	//return reinterpret_cast<int64_t(__fastcall*)(int64_t, int64_t, int64_t)>(Offsets::Base + Offsets::FrameScriptExecute)(int64_t(command), int64_t("compat"), 0);
+	//}
 
-	static inline int64_t GameMethods::Execute(const std::string& command)
-	{
-		return Execute(command.c_str());
-	}
+	//static inline int64_t GameMethods::Execute(const std::string& command)
+	//{
+	//	return 0;
+	//	//return Execute(command.c_str());
+	//}
 
-	static inline string GameMethods::GetText(const char* varName)
-	{
-		return reinterpret_cast<char* (__fastcall*)(const char*, int64_t, int, uint8_t)>(Offsets::Base + Offsets::FrameScriptGetText)(varName, -1, 0, 0);
-	}
+	//static inline string GameMethods::GetText(const char* varName)
+	//{
+	//	return reinterpret_cast<char* (__fastcall*)(const char*, int64_t, int, uint8_t)>(Offsets::Base + Offsets::FrameScriptGetText)(varName, -1, 0, 0);
+	//}
 
-	static inline void Register(const char* scriptName, GameMethods::LuaCallback callback)
-	{
-		return reinterpret_cast<void(__fastcall*)(const char*, GameMethods::LuaCallback)>(Offsets::Base + Offsets::FrameScriptRegister)(scriptName, callback);
-	}
+	//static inline void Register(const char* scriptName, GameMethods::LuaCallback callback)
+	//{
+	//	return reinterpret_cast<void(__fastcall*)(const char*, GameMethods::LuaCallback)>(Offsets::Base + Offsets::FrameScriptRegister)(scriptName, callback);
+	//}
 
 	//// lua
 
@@ -153,7 +155,8 @@ public:
 	}
 
 	static inline int64_t CastSpell(int32_t spellSlot, WGuid* targetGuid) {
-		return reinterpret_cast<int64_t(__fastcall*)(int32_t, int32_t, WGuid*, uint8_t, uint8_t)>(Offsets::castSpell)(spellSlot, 0, targetGuid, 0, 0);
+		return 0;
+		//return reinterpret_cast<int64_t(__fastcall*)(int32_t, int32_t, WGuid*, uint8_t, uint8_t)>(Offsets::CastSpell)(spellSlot, 0, targetGuid, 0, 0);
 	}
 
 	static bool Spell_C_GetSpellCooldown(uint32_t spellId, bool unk1, bool isPet, int64_t* duration, int64_t* startTime, bool* enabled, int64_t* unk2, int64_t* unk3, int64_t* modRate)

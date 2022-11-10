@@ -153,7 +153,7 @@ namespace Radar {
 							shape = EntityShape_t::SHAPE_CIRCLE;
 
 						
-						C3Vector dirArrowVec = playerPos + (forward * 2 * Settings::Drawing::Radar::zoom * scale);
+						C3Vector dirArrowVec = playerPos;// +(forward * 2 * Settings::Drawing::Radar::zoom * scale);
 						Vector2D dirArrowPos = WorldToRadar(dirArrowVec, localplayer->GetUnitPosition(), Player_rotation, winsize.x, Settings::Drawing::Radar::zoom);
 						Vector2D line = dirArrowPos - screenpos;
 

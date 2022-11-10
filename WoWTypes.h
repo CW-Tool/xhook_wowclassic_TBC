@@ -721,7 +721,7 @@ typedef struct
 }AuraRec;
 
 enum IntersectFlags : uint32_t {
-	None,
+	IntersectFlagsNone,
 	DoodadCollision = 0x00000001,
 	DoodadRender = 0x00000002,
 	WmoCollision = 0x00000010,
