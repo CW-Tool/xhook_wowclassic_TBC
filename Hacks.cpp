@@ -194,7 +194,7 @@ namespace WoW
 		int64_t iworld = GameMethods::Invoke<int64_t>(Offsets::GetWorld);
 		printf("printf Offsets::GetWorld %llx \n", iworld);
 
-		WoW::camera::TraceLineTest();
+		//WoW::camera::TraceLineTest();//TBD. do not use, it crash wow without error message
 
 		//LuaScript::ReInitObjMgr(); // Loop ObjMgr
 	
