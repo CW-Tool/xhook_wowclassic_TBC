@@ -32,7 +32,7 @@ BOOL g_bInitialised = false;
 bool g_ShowMenu = false;
 bool g_PresentHooked = false;
 //imgui
-ColorVar Settings::UI::accentColor = ImColor(43, 115, 178, 74);  //    |-»
+ColorVar Settings::UI::accentColor = ImColor(43, 115, 178, 74);  //    |-?
 ColorVar Settings::UI::mainColor = ImColor(46, 133, 200, 255);
 ColorVar Settings::UI::bodyColor = ImColor(28, 33, 32, 228);
 ColorVar Settings::UI::fontColor = ImColor(255, 255, 255, 255);
