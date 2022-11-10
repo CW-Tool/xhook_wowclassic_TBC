@@ -1,0 +1,1 @@
+inject.exe --run "E:\Games\SteamLibrary\SteamApps\common\Crysis\Bin32\Crysis.exe" --inject --steam-app-id 17300 --export Load --add-path --path-resolution --module cerberus.dll
