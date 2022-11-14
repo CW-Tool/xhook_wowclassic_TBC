@@ -16,10 +16,36 @@ namespace Offsets
 	inline static uintptr_t lua_pushboolean = Base + 0x511E00;
 
 	// framescript
-	static inline uintptr_t FrameScriptExecute = 0x00;
-	static inline uintptr_t FrameScriptGetText = 0x00;	// 
-	static inline uintptr_t FrameScriptRegister = 0x08C7A70;	// 
-	static inline uintptr_t FrameScript_RegisterFunctionNamespaceWithCount = 0x8C79C0;
+	// //FrameScript_ExecuteBuffer(1.13.6.37497)	0x3A2DA0 
+	//FrameScriptGetText = 0x39D160;
+	//FrameScriptRegister = 0x3A4CE0;(=FrameScript_RegisterFunctionNamespaceWithCount 的位置+B0)
+	//FrameScript_RegisterFunctionNamespaceWithCount = 0x3A4C30; 
+	/*
+	typedef UINT64(__fastcall *ptrFrameScriptExecute) (const char* , const char*, UINT64);
+	ptrFrameScriptExecute pFrameScriptExecute = (ptrFrameScriptExecute)(baseaddress +0x3A2DA0 );
+	try
+	{
+	hResult = pFrameScriptExecute(“DoEmote("dance")”, “Script”, 0);
+	}
+	catch (...)
+	{
+	}
+	*/
+	// 2.5.2.41446
+	//static inline uintptr_t FrameScriptRegister = 0x08C7A70;//(=FrameScript_RegisterFunctionNamespaceWithCount 的位置+B0) __int64 __fastcall sub_8C7A70(__int64 a1)
+	//static inline uintptr_t FrameScript_RegisterFunctionNamespaceWithCount = 0x8C79C0;//__int64 __fastcall sub_8C79C0(__int64 a1)
+
+	
+	static inline uintptr_t FrameScriptExecute = 0x00;//
+
+	//3.4.0.46368T 40 55 41 54 41 55 41 56 41 57 48 83 EC 20 48 8D 6C 24 ? 48 89 5D 38 4C 8D 35 ? ? ? ? 4C 8B E1 48 89 75 40 8B 0D ? ? ? ? 41 8B F0 48 89 7D 48 45 0F B6 E9 4C 89 35 ? ? ? ? E8 ? ? ? ? 33 C9 89 4D 30 8D 50 FF 83 FA 08 77 13 B3 5F C6 45 31 50 04 30 88 5D 30 88 45 32 88 4D 33 EB 04 
+	static inline uintptr_t FrameScriptGetText = 0x596CF0;//ida string window search _FEMALE, click the sub after DATA XREF:, go grahpic view to see the first sub
+
+	//?? __int64 0x593650 __fastcall sub_593650(__int64 a1, __int64 a2)
+	//?? 0x593600 __int64 __fastcall sub_593600(__int64 a1)
+	//?? 0x593550 __int64 __fastcall sub_593550(__int64 a1)
+	static inline uintptr_t FrameScriptRegister = 0x593600;//(=FrameScript_RegisterFunctionNamespaceWithCount 的位置+B0)
+	static inline uintptr_t FrameScript_RegisterFunctionNamespaceWithCount = 0x593550;
 
 	// Pointers
 	static inline uintptr_t IsPlayerInWorld = Base + 0x308F174; //3.4.0.46368T movzx   edx, cs:byte (after  0F B6 15)//48 83 EC 28 0F B6 15 ?? ?? ?? ?? C1 EA 03 83 E2 01 E8 ?? ?? ?? ?? B8 ?? ?? ?? ?? 48 83 C4 28 C3
