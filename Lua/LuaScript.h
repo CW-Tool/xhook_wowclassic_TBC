@@ -31,7 +31,7 @@ public:
     //static int ExecuteEveryMS(int64_t);
     //static int Fish(int64_t);
     //static int GetPlayerGuid(int64_t);
-    //static int GetPlayerPosition(int64_t);
+    static int GetPlayerPosition(int64_t);
     //static int IterateObjects(int64_t);
     //static int TestParam(int64_t);
     //static void chat(std::string message);

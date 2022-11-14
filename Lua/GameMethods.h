@@ -30,15 +30,15 @@ public:
 		return Execute(command.c_str());
 	}
 
-	//static inline string GameMethods::GetText(const char* varName)
-	//{
-	//	return reinterpret_cast<char* (__fastcall*)(const char*, int64_t, int, uint8_t)>(Offsets::Base + Offsets::FrameScriptGetText)(varName, -1, 0, 0);
-	//}
+	static inline string GetText(const char* varName)
+	{
+		return reinterpret_cast<char* (__fastcall*)(const char*, int64_t, int, uint8_t)>(Offsets::Base + Offsets::FrameScriptGetText)(varName, -1, 0, 0);
+	}
 
-	//static inline void Register(const char* scriptName, GameMethods::LuaCallback callback)
-	//{
-	//	return reinterpret_cast<void(__fastcall*)(const char*, GameMethods::LuaCallback)>(Offsets::Base + Offsets::FrameScriptRegister)(scriptName, callback);
-	//}
+	static inline void Register(const char* scriptName, GameMethods::LuaCallback callback)
+	{
+		return reinterpret_cast<void(__fastcall*)(const char*, GameMethods::LuaCallback)>(Offsets::Base + Offsets::FrameScriptRegister)(scriptName, callback);
+	}
 
 	//// lua
 
@@ -78,10 +78,10 @@ public:
 	//{
 	//	return reinterpret_cast<int64_t(__fastcall*)(int64_t, WGuid*)>(Offsets::Base + Offsets::lua_PushGuid)(luaState, guidPtr);
 	//}
-	//static inline int64_t PushNumber(int64_t luaState, double value)
-	//{
-	//	return reinterpret_cast<int64_t(__fastcall*)(int64_t, double)>(Offsets::Base + Offsets::lua_PushNumber)(luaState, value);
-	//}
+	static inline int64_t PushNumber(int64_t luaState, double value)
+	{
+		return reinterpret_cast<int64_t(__fastcall*)(int64_t, double)>(Offsets::Base + Offsets::lua_pushnumber)(luaState, value);
+	}
 	//static int64_t PushString(int64_t luaState, int64_t value)
 	//{
 	//	return reinterpret_cast<int64_t(__fastcall*)(int64_t, int64_t)>(Offsets::Base + Offsets::lua_PushString)(luaState, value);

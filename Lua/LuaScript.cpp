@@ -153,7 +153,7 @@ unsigned int LuaScript::EnumVisibleObjCb(int64_t objectPtr, int64_t filter)
 
 void LuaScript::RegisterHandler(std::string commandName, GameMethods::LuaCallback callback)
 {
-	//GameMethods::Register(commandName.c_str(), LuaScript::WriteCallback(callback));
+	GameMethods::Register(commandName.c_str(), LuaScript::WriteCallback(callback));
 }
 
 void LuaScript::SetHardwareEvent()
@@ -251,18 +251,18 @@ GameMethods::LuaCallback LuaScript::WriteCallback(GameMethods::LuaCallback callb
 //	return 1;
 //}
 //
-//int LuaScript::GetPlayerPosition(int64_t luaState)
-//{
-//
-//	//int x = GameMethods::PushNumber(luaState, ActivePlayer->GetUnitPosition().x);
-//	//int y = GameMethods::PushNumber(luaState, ActivePlayer->GetUnitPosition().y);
-//	//int z = GameMethods::PushNumber(luaState, ActivePlayer->GetUnitPosition().z);
-//
-//	return 3;
-//}
-//
-//
-//
+int LuaScript::GetPlayerPosition(int64_t luaState)
+{
+
+	int x = GameMethods::PushNumber(luaState, 999.0f);
+	int y = GameMethods::PushNumber(luaState, 999.0f);
+	int z = GameMethods::PushNumber(luaState, 999.0f);
+
+	return 3;
+}
+
+
+
 //int LuaScript::TestParam(int64_t luaState)
 //{
 //	auto param = GameMethods::ToNumber(luaState, 1);

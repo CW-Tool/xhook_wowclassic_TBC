@@ -422,6 +422,8 @@ void LoopFuncs()
 	//GameMethods::Execute("JumpOrAscendStart()");
 	//GetServerName()
 	GameMethods::Execute("AccountLogin_Login()");
+	//LuaScript::RegisterHandler("getPosition", LuaScript::GetPlayerPosition);
+
 	while (true)
 	{
 		WoW::Hacks::GExecute_IGFunctions();		
