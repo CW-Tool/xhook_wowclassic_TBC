@@ -68,7 +68,17 @@ namespace Offsets
 
 	//3.4.0.46368T 48 89 5C 24 ? 89 4C 24 08 55 56 57 41 54 41 55 41 56 41 57 48 83 EC 30 48 8B 1D ? ? ? ? 4D 8B F1 48 8B CB 41 8B F0 4C 8B EA E8 ? ? ? ? 4C 8B 3D ? ? ? ? BD ? ? ? ? 2B EE 
 	//search above function, then click X, find RUNTIME_FUNCTION, click next function
-	static inline uintptr_t FrameScriptExecute = 0x5910E0;//
+	static inline uintptr_t FrameScriptExecute = 0x5910E0;
+	//or search pattern(may change)
+	//48 89 5C 24 ? 48 89 74 24 ? 48 89 7C 24 ? 55 41 56 41 57 48 8B EC 48 81 EC ? ? ? ? 83 05 ? ? ? ? ? 49 8B D8 4C 8B 35 ? ? ? ? 4C 8B FA 48 8B 35 ? ? ? ? 48 8B F9 74 42 83 3D ? ? ? ? ? 75 39 48 8B D3 49 8B CE E8 ? ? ? ? 48 89 1D ? ? ? ? 48 85 DB 74 22 48 83 3D ? ? ? ? ? 75 18
+
+	//3.4.0.46368 特征不一样sign close to 1.13.6.37497//0x5978B0 
+	//48 89 5C 24 ? 48 89 6C 24 ? 56 57 41 56 48 81 EC ? ? ? ? 83 05 ? ? ? ? ? 49 8B D8 48 8B 2D ? ? ? ? 4C 8B F2 48 8B 35 ? ? ? ? 48 8B F9 74 42 83 3D ? ? ? ? ? 75 39 48 8B D3 48 8B CD E8 ? ? ? ? 48 89 1D ? ? ? ? 48 85 DB 74 22 48 83 3D ? ? ? ? ? 75 18 83 3D ? ? ? ? ? 48 89 1D ? ? ? ? 74 08 48 8B CD E8 ? ? ? ? 
+	
+	//1.13.6.37497 //0x3A2DA0
+	//48 89 5C 24 ? 48 89 6C 24 ? 56 57 41 56 48 81 EC ? ? ? ? 83 05 ? ? ? ? ? 49 8B F0 48 8B 3D ? ? ? ? 4C 8B F2 48 8B 2D ? ? ? ? 48 8B D9 74 5C 83 3D ? ? ? ? ? 75 53 49 8B D0 48 8B CF E8 ? ? ? ? 48 89 35 ? ? ? ? 48 85 F6 74 3C 48 83 3D ? ? ? ? ? 75 32 4C 8D 05 ? ? ? ? 
+
+
 
 	//3.4.0.46368T 40 55 41 54 41 55 41 56 41 57 48 83 EC 20 48 8D 6C 24 ? 48 89 5D 38 4C 8D 35 ? ? ? ? 4C 8B E1 48 89 75 40 8B 0D ? ? ? ? 41 8B F0 48 89 7D 48 45 0F B6 E9 4C 89 35 ? ? ? ? E8 ? ? ? ? 33 C9 89 4D 30 8D 50 FF 83 FA 08 77 13 B3 5F C6 45 31 50 04 30 88 5D 30 88 45 32 88 4D 33 EB 04 
 	static inline uintptr_t FrameScriptGetText = 0x596CF0;//ida string window search _FEMALE, click the sub after DATA XREF:, go grahpic view to see the first sub
