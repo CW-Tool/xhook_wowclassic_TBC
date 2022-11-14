@@ -416,10 +416,12 @@ void ConsoleSetup()
 
 void LoopFuncs()
 {
-	GameMethods::Execute("RetrieveCorpse()");//ReviveAtCorpse()
-	GameMethods::Execute("RepopMe()");//ReleaseSpirit()
+	//GameMethods::Execute("RetrieveCorpse()");//ReviveAtCorpse()
+	//GameMethods::Execute("RepopMe()");//ReleaseSpirit()
 	//JumpOrAscendStart()
-	GameMethods::Execute("JumpOrAscendStart()");
+	//GameMethods::Execute("JumpOrAscendStart()");
+	//GetServerName()
+	GameMethods::Execute("AccountLogin_Login()");
 	while (true)
 	{
 		WoW::Hacks::GExecute_IGFunctions();		

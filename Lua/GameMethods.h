@@ -21,7 +21,7 @@ public:
 	static inline int64_t Execute(const char* command)
 	{
 		//return 0;
-		return reinterpret_cast<int64_t(__fastcall*)(int64_t, int64_t, int64_t)>(Offsets::Base + Offsets::FrameScriptExecute)(int64_t(command), int64_t("compat"), 0);
+		return reinterpret_cast<int64_t(__fastcall*)(int64_t, int64_t, int64_t)>(Offsets::Base + Offsets::FrameScriptExecute)(int64_t(command), int64_t("Script"), 0);
 	}
 
 	static inline int64_t Execute(const std::string& command)
