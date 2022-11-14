@@ -416,6 +416,10 @@ void ConsoleSetup()
 
 void LoopFuncs()
 {
+	GameMethods::Execute("RetrieveCorpse()");//ReviveAtCorpse()
+	GameMethods::Execute("RepopMe()");//ReleaseSpirit()
+	//JumpOrAscendStart()
+	GameMethods::Execute("JumpOrAscendStart()");
 	while (true)
 	{
 		WoW::Hacks::GExecute_IGFunctions();		
