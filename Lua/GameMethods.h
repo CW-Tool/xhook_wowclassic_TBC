@@ -21,13 +21,65 @@ public:
 	static inline int64_t Execute(const char* command)
 	{
 		//return 0;
-		return reinterpret_cast<int64_t(__fastcall*)(int64_t, int64_t, int64_t)>(Offsets::Base + Offsets::FrameScriptExecute)(int64_t(command), int64_t("Script"), 0);
+		return reinterpret_cast<int64_t(__fastcall*)(int64_t, int64_t, int64_t)>(Offsets::Base + Offsets::FrameScriptExecute)(int64_t(command), int64_t("compat"), 0);
 	}
+
 
 	static inline int64_t Execute(const std::string& command)
 	{
 		//return 0;
 		return Execute(command.c_str());
+	}
+
+	typedef UINT64(__fastcall* ptrFrameScriptExecute) (const char*, const char*, UINT64);
+
+
+	static inline int64_t Execute2(const std::string& command)
+	{
+
+		ptrFrameScriptExecute pFrameScriptExecute = (ptrFrameScriptExecute)(Offsets::Base + Offsets::FrameScriptExecute);
+		try
+		{
+			int64_t hResult = pFrameScriptExecute(command.c_str(), "compat", 0);
+		}
+		catch (...)
+		{
+		}
+	}
+
+	static inline void Execute3()
+	{
+		typedef int64_t(__fastcall* exeScript)(const char*, const char*, int64_t);
+		exeScript es = reinterpret_cast<exeScript>((uintptr_t)Offsets::Base + Offsets::FrameScriptExecute);
+
+		es("AccountLogin_Login()", "test", 0);   // only the first call (any wow lua function）can work
+		//es("CastSpellByID(123)", "test", 0);
+
+	}
+
+	using FrameScript_RegisterFunction = uintptr_t(__fastcall*)(const char* name, uintptr_t(__fastcall* function)());
+	static inline void RegisterFunc(const char* name, uintptr_t func())
+	{
+		auto const TFunc = reinterpret_cast<FrameScript_RegisterFunction>(Offsets::Base + Offsets::FrameScriptRegister);
+
+		(TFunc)(name, func);
+	}
+
+	static inline void ExecuteReg()
+	{
+		RegisterFunc("Testfunc", Testfunc);
+
+	}
+
+	static inline uintptr_t Testfunc()
+	{
+		if (!GameMethods::ObjMgrIsValid(0))
+		{
+			std::cout << "reg Testfunc() " << std::endl;
+			printf("reg printf ObjMgrIsValid Not Valid\n");
+			return 0;
+		}
+		return 0;
 	}
 
 	static inline string GetText(const char* varName)
