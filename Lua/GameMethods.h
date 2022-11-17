@@ -45,6 +45,8 @@ public:
 		catch (...)
 		{
 		}
+
+		return 0;
 	}
 
 	static inline void Execute3()

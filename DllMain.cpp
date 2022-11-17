@@ -421,8 +421,8 @@ void LoopFuncs()
 	//JumpOrAscendStart()
 	//GameMethods::Execute("JumpOrAscendStart()");
 	//GetServerName()
-	GameMethods::ExecuteReg();
-	//GameMethods::Execute2("AccountLogin_Login()");
+	//GameMethods::ExecuteReg();
+	GameMethods::Execute2("AccountLogin_Login()");
 	//LuaScript::RegisterHandler("getPosition", LuaScript::GetPlayerPosition);
 
 	while (true)
